@@ -7,7 +7,7 @@ services:
       sh -c "sleep 10 && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/app
-      - static_volume:/app/static
+      - ./static:/app/static
       - media_volume:/app/media
     ports:
       - "8000:8000"
