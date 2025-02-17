@@ -1,34 +1,38 @@
-const selectedOptions = { taille: [], marque: [], etat: [], couleur: [], prix: [], matiere: [], trier: [] };
+const selectedOptions = { taille: [], marque: [], etat: [], couleur: [] };
 
-function updateTags(category) {
-  const tagContainer = document.querySelector(`.${category}-tags`);
-  const countSpan = document.querySelector(`.${category}-menu .dropdown-header span`);
-  tagContainer.innerHTML = '';
+// Update filter tags
+function updateTags() {
+  const tagContainer = document.getElementById("filter-tags");
+  tagContainer.innerHTML = "";
 
-  selectedOptions[category].forEach(option => {
-    const tag = document.createElement('span');
-    tag.classList.add('selected-tag');
-    tag.innerHTML = `${option} <span class="remove-tag" onclick="removeTag('${category}', '${option}')">×</span>`;
-    tagContainer.appendChild(tag);
+  Object.keys(selectedOptions).forEach(category => {
+    selectedOptions[category].forEach(option => {
+      const tag = document.createElement("span");
+      tag.classList.add("selected-tag");
+      tag.innerHTML = `${option} <span class="remove-tag" onclick="removeTag('${category}', '${option}')">×</span>`;
+      tagContainer.appendChild(tag);
+    });
   });
 
-  countSpan.textContent = `${selectedOptions[category].length} sélectionné(s)`;
+  // Fetch filtered products
+  fetchFilteredProducts();
 }
 
+// Select an option
 function selectOption(category, option) {
   if (!selectedOptions[category].includes(option)) {
-    if (category === 'trier') {
-      resetCategory('trier')
-    }
     selectedOptions[category].push(option);
-    updateTags(category);
+    updateTags();
   }
 }
 
+// Remove a tag
 function removeTag(category, option) {
   selectedOptions[category] = selectedOptions[category].filter(item => item !== option);
-  updateTags(category);
+  updateTags();
 }
+
+
 
 function resetCategory(category) {
   selectedOptions[category] = [];
@@ -72,21 +76,64 @@ function updatePrice() {
   updateTags('prix');
 }
 
+// Fetch filtered products from the server
+function fetchFilteredProducts() {
+  const queryParams = new URLSearchParams(selectedOptions).toString();
+  console.log(queryParams)
+
+  fetch(`/filter-products/?${queryParams}`)
+    .then(response => response.json())
+    .then(data => {
+      console.log("data",data)
+      const productList = document.getElementById("product-list");
+      productList.innerHTML = "";
+
+      if (data.products.length === 0) {
+        productList.innerHTML = "<p>Aucun produit trouvé.</p>";
+        return;
+      }
+
+      data.products.forEach(product => {
+        const productHTML = `
+          <div class="col-md-4 mb-3">
+              <div class="card">
+                  <img src="${product.image_url}" class="card-img-top" alt="${product.title}">
+                  <div class="card-body">
+                      <h5 class="card-title">${product.title}</h5>
+                      <p class="card-text">€${product.price}</p>
+                      <a href="/products/${product.id}/" class="btn btn-primary">Voir</a>
+                  </div>
+              </div>
+          </div>`;
+        productList.innerHTML += productHTML;
+      });
+    })
+    .catch(error => console.error("Error fetching products:", error));
+}
+
+// Reset all filters
 function resetAllFilters() {
   Object.keys(selectedOptions).forEach(category => {
     selectedOptions[category] = [];
-    updateTags(category);
   });
-
-  // Reset price range sliders
-  document.getElementById("min-price").value = 0;
-  document.getElementById("max-price").value = 500;
-  document.getElementById("price-label").textContent = "0€ - 500€";
+  updateTags();
 }
 
+// function resetAllFilters() {
+//   Object.keys(selectedOptions).forEach(category => {
+//     selectedOptions[category] = [];
+//     updateTags(category);
+//   });
+
+//   // Reset price range sliders
+//   document.getElementById("min-price").value = 0;
+//   document.getElementById("max-price").value = 500;
+//   document.getElementById("price-label").textContent = "0€ - 500€";
+// }
 
 
-// ✅ photos
+
+// ✅ photos - on detail page. TODO: don't laod on index
 document.getElementById("photoInput").addEventListener("change", function (event) {
   const photoContainer = document.getElementById("photoContainer");
   const addPhotoBox = document.getElementById("addPhotoBox");

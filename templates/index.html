@@ -26,522 +26,125 @@
   <section class="section produits">
 
     <div class="container-infos-produits">
-      <div class="container-title">
-        <h2 class="">Chaussures filles</h2>
-      </div>
-
-      <!-- START drop down -->
-      <div class="container-choise">
-        <div class="dropdown-barre">
-          <!-- Taille Dropdown -->
-          <div class="dropdown taille">
-            <button class="dropdown-button" onclick="toggleDropdown('taille')">Taille <span
-                class="arrow"></span></button>
-            <div class="dropdown-menu taille-menu">
-              <div class="dropdown-header">
-                <span>0 sélectionné(s)</span>
-              </div>
-              <div class="size-options">
-                <div class="size-option" onclick="selectOption('taille', 'NAI (50cm)')">NAI (50cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '1M (54cm)')">1M (54cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '3M (60cm)')">3M (60cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '6M (67cm)')">6M (67cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '9M (71cm)')">9M (71cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '12M (74cm)')">12M (74cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '18M (81cm)')">18M (81cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '24M (86cm)')">24M (86cm)</div>
-                <div class="size-option" onclick="selectOption('taille', '1an')">1an </div>
-                <div class="size-option" onclick="selectOption('taille', '2ans')">2ans</div>
-                <div class="size-option" onclick="selectOption('taille', '3ans')">3ans</div>
-                <div class="size-option" onclick="selectOption('taille', '4ans')">4ans</div>
-                <div class="size-option" onclick="selectOption('taille', '5ans')">5ans</div>
-                <div class="size-option" onclick="selectOption('taille', '6ans')">6ans</div>
-                <div class="size-option" onclick="selectOption('taille', '7ans')">7ans</div>
-                <div class="size-option" onclick="selectOption('taille', '8ans')">8ans</div>
-                <div class="size-option" onclick="selectOption('taille', '9ans')">9ans</div>
-                <div class="size-option" onclick="selectOption('taille', '10ans')">10ans</div>
-                <div class="size-option" onclick="selectOption('taille', '11ans')">11ans</div>
-                <div class="size-option" onclick="selectOption('taille', '12ans')">12ans</div>
-                <div class="size-option" onclick="selectOption('taille', '13ans')">13ans</div>
-                <div class="size-option" onclick="selectOption('taille', '14ans')">14ans</div>
-                <div class="size-option" onclick="selectOption('taille', '15ans')">15ans</div>
-                <div class="size-option" onclick="selectOption('taille', '16ans')">16ans</div>
-                <div class="size-option" onclick="selectOption('taille', '17ans')">17ans</div>
-                <div class="size-option" onclick="selectOption('taille', '18ans')">18ans</div>
-                <div class="size-option" onclick="selectOption('taille', 'TU')">TU</div>
-                <div class="size-option" onclick="selectOption('taille', '14ans')">P NAIS</div>
-                <div class="size-option" onclick="selectOption('taille', '14ans')">P19/20</div>
-                <div class="size-option" onclick="selectOption('taille', '15ans')">P21/22</div>
-                <div class="size-option" onclick="selectOption('taille', '16ans')">P23/24</div>
-                <div class="size-option" onclick="selectOption('taille', '17ans')">P25/26</div>
-                <div class="size-option" onclick="selectOption('taille', '18ans')">P27/28</div>
-                <div class="size-option" onclick="selectOption('taille', 'TU')">P29/30</div>
-                <div class="size-option" onclick="selectOption('taille', '14ans')">P31/32</div>
-                <div class="size-option" onclick="selectOption('taille', '15ans')">P33/34</div>
-                <div class="size-option" onclick="selectOption('taille', '16ans')">P35/36</div>
-                <div class="size-option" onclick="selectOption('taille', '17ans')">P37/38</div>
-                <div class="size-option" onclick="selectOption('taille', '18ans')">P39/40</div>
-                <div class="size-option" onclick="selectOption('taille', 'TU')">P41/42</div>
-
-              </div>
-            </div>
-          </div>
-          <!-- Marque Dropdown -->
-          <div class="dropdown marque">
-            <button class="dropdown-button" onclick="toggleDropdown('marque')">Marque <span
-                class="arrow"></span></button>
-            <div class="dropdown-menu marque-menu">
-              <div class="dropdown-header">
-                <span>0 sélectionné(s)</span>
-              </div>
-              <div class="brand-options">
-                <div class="brand-option" onclick="selectOption('marque', 'Petit Bateau')">Petit Bateau</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Jacadi')">Jacadi</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Sergent Major')">Sergent Major</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Catimini')">Catimini</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Okaïdi / Obaïbi')">Okaïdi / Obaïbi</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Vertbaudet')">Vertbaudet</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Tartine et Chocolat')">Tartine et Chocolat
-                </div>
-                <div class="brand-option" onclick="selectOption('marque', 'Bonpoint')">Bonpoint</div>
-                <div class="brand-option" onclick="selectOption('marque', 'IKKS Junior')">IKKS Junior</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Tape à l’Œil')">Tape à l’Œil</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Zara Kids')">Zara Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'H&M Kids')">H&M Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Mango Kids')">Mango Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Boden Mini')">Boden Mini</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Cyrillus')">Cyrillus</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Ralph Lauren Kids')">Ralph Lauren Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Tommy Hilfiger Kids')">Tommy Hilfiger Kids
-                </div>
-                <div class="brand-option" onclick="selectOption('marque', 'Lacoste Kids')">Lacoste Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Nike Kids')">Nike Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Adidas Kids')">Adidas Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'The North Face Kids')">The North Face Kids
-                </div>
-                <div class="brand-option" onclick="selectOption('marque', 'Columbia Kids')">Columbia Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Levi’s Kids')">Levi’s Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'GAP Kids')">GAP Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Name It')">Name It</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Converse Kids')">Converse Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Vans Kids')">Vans Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Timberland Kids')">Timberland Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Dr. Martens Kids')">Dr. Martens Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Clarks Kids')">Clarks Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Geox')">Geox</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Shoo Pom')">Shoo Pom</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Kickers')">Kickers</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Bellamy')">Bellamy</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Aster')">Aster</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Babybotte')">Babybotte</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Biomecanics')">Biomecanics</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Naturino')">Naturino</div>
-                <div class="brand-option" onclick="selectOption('marque', 'GBB')">GBB</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Skechers Kids')">Skechers Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'New Balance Kids')">New Balance Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Fila Kids')">Fila Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Puma Kids')">Puma Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Reebok Kids')">Reebok Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Asics Kids')">Asics Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Ugg Kids')">Ugg Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Birkenstock Kids')">Birkenstock Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Veja Kids')">Veja Kids</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Chicco')">Chicco</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Robeez')">Robeez</div>
-                <div class="brand-option" onclick="selectOption('marque', 'Autre')">Autre</div>
-
-              </div>
-            </div>
-          </div>
-          <!-- Etat Dropdown -->
-          <div class="dropdown etat">
-            <button class="dropdown-button" onclick="toggleDropdown('etat')">État <span class="arrow"></span></button>
-            <div class="dropdown-menu etat-menu">
-              <div class="dropdown-header">
-                <span>0 sélectionné(s)</span>
-              </div>
-              <div class="etat-options">
-                <div class="etat-option" onclick="selectOption('etat', 'Neuf avec étiquette')">Neuf avec étiquette</div>
-                <div class="etat-option" onclick="selectOption('etat', 'Neuf sans étiquette')">Neuf sans étiquette</div>
-                <div class="etat-option" onclick="selectOption('etat', 'Trés bon état')">Trés bon état</div>
-                <div class="etat-option" onclick="selectOption('etat', 'Bon état')">Bon état</div>
-                <div class="etat-option" onclick="selectOption('etat', 'Satisfaisant')">Satisfaisant</div>
-              </div>
-            </div>
-          </div>
-          <!-- Couleur Dropdown -->
-          <div class="dropdown couleur">
-            <button class="dropdown-button" onclick="toggleDropdown('couleur')">Couleur <span
-                class="arrow"></span></button>
-            <div class="dropdown-menu couleur-menu">
-              <div class="dropdown-header">
-                <span>0 sélectionné(s)</span>
-              </div>
-              <div class="couleur-options">
-                <div class="couleur-option" onclick="selectOption('couleur', 'Multicolore')"><span class="color-box"
-                    style="background: linear-gradient(45deg, red, blue, yellow);"></span> Multicolore</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Blanc')"><span class="color-box"
-                    style="background-color: white; border: 1px solid #ccc;"></span> Blanc</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Bleu')"><span class="color-box"
-                    style="background-color: #1E88E5;"></span> Bleu</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Rose')"><span class="color-box"
-                    style="background-color: pink;"></span> Rose</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Vert')"><span class="color-box"
-                    style="background-color: green;"></span> Vert</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Beige')"><span class="color-box"
-                    style="background-color: beige;"></span> Beige</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Rouge')"><span class="color-box"
-                    style="background-color: red;"></span> Rouge</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Gris')"><span class="color-box"
-                    style="background-color: grey;"></span> Gris</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Jaune')"><span class="color-box"
-                    style="background-color: yellow;"></span> Jaune</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Marron')"><span class="color-box"
-                    style="background-color: brown;"></span> Marron</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Orange')"><span class="color-box"
-                    style="background-color: orange;"></span> Orange</div>
-                <div class="couleur-option" onclick="selectOption('couleur', 'Noir')"><span class="color-box"
-                    style="background-color: black;"></span> Noir</div>
-              </div>
-            </div>
-          </div>
-          <!-- Prix Dropdown -->
-          <div class="dropdown prix">
-            <button class="dropdown-button" onclick="toggleDropdown('prix')">Prix <span class="arrow"></span></button>
-            <div class="dropdown-menu prix-menu">
-              <div class="dropdown-header">
-              </div>
-              <div class="price-range">
-                <input type="range" id="min-price" min="0" max="500" step="1" value="0" oninput="updatePrice()">
-                <input type="range" id="max-price" min="0" max="500" step="1" value="500" oninput="updatePrice()">
-                <span id="price-label">0€ - 500€</span>
-              </div>
-            </div>
-          </div>
-          <!-- Matière Dropdown -->
-          <div class="dropdown matiere">
-            <button class="dropdown-button" onclick="toggleDropdown('matiere')">Matière <span
-                class="arrow"></span></button>
-            <div class="dropdown-menu matiere-menu">
-              <div class="dropdown-header">
-                <span>0 sélectionné(s)</span>
-              </div>
-              <div class="matiere-options">
-                <div class="matiere-option" onclick="selectOption('matiere', 'Coton')">Coton</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Lin')">Lin</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Laine')">Laine</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Soie')">Soie</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Cachemire')">Cachemire</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Mohair')">Mohair</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Alpaga')">Alpaga</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Chanvre')">Chanvre</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Viscose')">Viscose</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Modal')">Modal</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Lyocell (Tencel)')">Lyocell (Tencel)</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Polyester')">Polyester</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Acrylique')">Acrylique</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Nylon')">Nylon</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Élasthanne (Spandex/Lycra)')">Élasthanne
-                  (Spandex/Lycra)</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Denim (Jean)')">Denim (Jean)</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Velours')">Velours</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Cuir')">Cuir</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Similicuir (cuir synthétique)')">
-                  Similicuir (cuir synthétique)</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Duvet (plumes d’oie ou de canard)')">Duvet
-                  (plumes d’oie ou de canard)</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Tweed')">Tweed</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Jersey')">Jersey</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Gabardine')">Gabardine</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Taffetas')">Taffetas</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Popeline')">Popeline</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Organza')">Organza</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Satin')">Satin</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Tulle')">Tulle</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Mousseline')">Mousseline</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Microfibre')">Microfibre</div>
-
-                <!-- Matières pour jouets -->
-                <div class="matiere-option" onclick="selectOption('matiere', 'Bois')">Bois</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Plastique')">Plastique</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Caoutchouc naturel')">Caoutchouc naturel
-                </div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Silicone')">Silicone</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Tissu')">Tissu</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Feutrine')">Feutrine</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Mousse EVA')">Mousse EVA</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Métal')">Métal</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Carton')">Carton</div>
-                <div class="matiere-option" onclick="selectOption('matiere', 'Résine')">Résine</div>
-              </div>
-            </div>
-          </div>
-          <!-- Trier Par Dropdown -->
-          <div class="dropdown trier">
-            <button class="dropdown-button" onclick="toggleDropdown('trier')">Trier par <span
-                class="arrow"></span></button>
-            <div class="dropdown-menu trier-menu">
-              <div class="dropdown-header">
-              </div>
-              <div class="trier-list">
-                <label class="trier-option" onclick="selectOption('trier', 'Pertinence')">
-                  <span>Pertinence</span>
-                  <input type="radio" name="sort-option" value="pertinence" checked>
-                  <span class="radio-custom"></span>
-                </label>
-
-                <label class="trier-option" onclick="selectOption('trier', 'Prix décroissant')">
-                  <span>Prix décroissant</span>
-                  <input type="radio" name="sort-option" value="prix-decroissant">
-                  <span class="radio-custom"></span>
-                </label>
-
-                <label class="trier-option" onclick="selectOption('trier', 'Prix croissant')">
-                  <span>Prix croissant</span>
-                  <input type="radio" name="sort-option" value="prix-croissant">
-                  <span class="radio-custom"></span>
-                </label>
-
-                <label class="trier-option" onclick="selectOption('trier', 'Le plus récent')">
-                  <span>Le plus récent</span>
-                  <input type="radio" name="sort-option" value="recent">
-                  <span class="radio-custom"></span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END drop down -->
-      <div>
-        <!-- tags -->
-        <div class="tag-box">
-          <span class="taille-tags tag-container"></span>
-          <span class="marque-tags tag-container"></span>
-          <span class="etat-tags tag-container"></span>
-          <span class="couleur-tags tag-container"></span>
-          <span class="prix-tags tag-container"></span>
-          <span class="matiere-tags tag-container"></span>
-          <span class="trier-tags tag-container"></span>
-        </div>
-
-        <!-- Remove All -->
-        <div class="container-reinitialiser">
-          <div></div>
-          <div class="reset-all-container">
-            <span class="reset-all" onclick="resetAllFilters()">Tout réinitialiser</span>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <hr class="stk-block-divider__hr">
-      </div>
-      <!--END Remove Choise -->
-
-      <!--START Container filter deep  -->
-      <div class="container-filter">
-        <div class="container-deep">
-          <p>Chaussons</p>
-          <p>bottes</p>
-          <p>tongues</p>
-        </div>
-        <div class="container-deep">
-          <p>sandales</p>
-          <p>chaussures de sport</p>
-          <p>Chaussues habillées</p>
-        </div>
-        <div class="container-deep">
-          <p>chaussures à talons</p>
-        </div>
-      </div>
-      <!--END Container filter deep  -->
-      <div>
-        <hr class="stk-block-divider__hr">
-      </div>
-    </div>
-
-    <!--START photos  -->
-    <div
-      class="alignfull wp-block-ugb-container ugb-container ugb-59f7010 ugb-container--v2 ugb-container--design-plain ugb-main-block">
-      <div class="ugb-inner-block">
-        <div class="ugb-block-content">
-          <div class="ugb-container__wrapper ugb-59f7010-wrapper">
-            <div class="ugb-container__side">
-              <div class="ugb-container__content-wrapper ugb-59f7010-content-wrapper">
-                <div class="wp-block-wab-wab-display-posts">
-                  <div class="display-container rec-events rec-grey">
-                    <div href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/b.jpg)">
-                        <span role="img"
-                          aria-label="Featured Image for EASE – Economic Abuse Support &amp; Empowerment"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Sergent Major</h3>
-                          <p>18 mois</p>
-                          <p>Trés bon état</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-                      </div>
-                    </div>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/e.png)">
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Petit bateau</h3>
-                          <p>4 ans</p>
-                          <p>etat neuf</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/c.jpg)">
-                        <span role="img"
-                          aria-label="Featured Image for Advancing Equality: Addressing Workplace Harassment through Policy Change in the STEM Sector"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Vertbeaudet </h3>
-                          <p>6ans</p>
-                          <p>Etat d'usage</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/b.jpg)">
-                        <span role="img"
-                          aria-label="Featured Image for AGES: Building Financial Security for Older Survivors"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Okaidi</h3>
-                          <p>12 ans</p>
-                          <p>Neuf avec etiquette</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/e.png)">
-                        <span role="img"
-                          aria-label="Featured Image for Navigating Trauma: Understanding the counselling and psychotherapy experiences of survivors of intimate partner violence"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Kiabi</h3>
-                          <p>4 ans</p>
-                          <p>Etat corect</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="/" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/a.png)">
-                        <span role="img"
-                          aria-label="Featured Image for Building Anti-Racism &amp; Trauma-Informed Practices (Enhancement)"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Aubert </h3>
-                          <p>6 mois</p>
-                          <p>Neuf</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/c.jpg)">
-                        <span role="img"
-                          aria-label="Featured Image for Experiences of IPV during the pandemic: Mobilizing for enhanced service delivery"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Okaidi </h3>
-                          <p>9 mois </p>
-                          <p>Etat corect</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/b.jpg)">
-                        <span role="img" aria-label="Featured Image for Supporting Safe STEM Workplaces"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Naf Naf </h3>
-                          <p>5ans</p>
-                          <p>Neuf avec étiquette</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/e.png)">
-                        <span role="img" aria-label="Featured Image for Safe at Home"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Intexto </h3>
-                          <p>16 ans</p>
-                          <p>Neuf</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                    <a href="" class="single-article">
-                      <div class="single-image" style="background-image: url(assets/images/e.png)">
-                        <span role="img" aria-label="Featured Image for Canadian MARAC"></span>
-                      </div>
-                      <div class="single-content">
-                        <div>
-                          <h3>Creecks </h3>
-                          <p>5 ans </p>
-                          <p>Etat corect</p>
-                          <p>2€</p>
-                          <p class="color-prix"> 3€</p>
-                        </div>
-
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--END photos  -->
-
-  </section>
-
-<section class="section produits">
-    <div class="container-infos-produits">
         <div class="container-title">
             <h2 class="">Chaussures filles</h2>
         </div>
-        <div class="row">
+
+        <!-- START drop down filters -->
+        <div class="container-choise">
+            <div class="dropdown-barre">
+                <!-- Taille Dropdown -->
+                <div class="dropdown taille">
+                    <button class="dropdown-button" onclick="toggleDropdown('taille')">Taille <span class="arrow"></span></button>
+                    <div class="dropdown-menu taille-menu">
+                        <div class="dropdown-header">
+                            <span>0 sélectionné(s)</span>
+                        </div>
+                        <div class="size-options">
+                            {% for size in sizes %}
+                                <div class="size-option" onclick="selectOption('taille', '{{ size }}')">{{ size }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marque Dropdown -->
+                <div class="dropdown marque">
+                    <button class="dropdown-button" onclick="toggleDropdown('marque')">Marque <span class="arrow"></span></button>
+                    <div class="dropdown-menu marque-menu">
+                        <div class="dropdown-header">
+                            <span>0 sélectionné(s)</span>
+                        </div>
+                        <div class="brand-options">
+                            {% for brand in brands %}
+                                <div class="brand-option" onclick="selectOption('marque', '{{ brand }}')">{{ brand }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etat Dropdown -->
+                <div class="dropdown etat">
+                    <button class="dropdown-button" onclick="toggleDropdown('etat')">État <span class="arrow"></span></button>
+                    <div class="dropdown-menu etat-menu">
+                        <div class="dropdown-header">
+                            <span>0 sélectionné(s)</span>
+                        </div>
+                        <div class="etat-options">
+                            {% for condition in conditions %}
+                                <div class="etat-option" onclick="selectOption('etat', '{{ condition }}')">{{ condition }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Couleur Dropdown -->
+                <div class="dropdown couleur">
+                    <button class="dropdown-button" onclick="toggleDropdown('couleur')">Couleur <span class="arrow"></span></button>
+                    <div class="dropdown-menu couleur-menu">
+                        <div class="dropdown-header">
+                            <span>0 sélectionné(s)</span>
+                        </div>
+                        <div class="couleur-options">
+                            {% for color in colors %}
+                                <div class="couleur-option" onclick="selectOption('couleur', '{{ color }}')">
+                                    <span class="color-box" style="background-color: {{ color }};"></span> {{ color }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prix Dropdown -->
+                <div class="dropdown prix">
+                    <button class="dropdown-button" onclick="toggleDropdown('prix')">Prix <span class="arrow"></span></button>
+                    <div class="dropdown-menu prix-menu">
+                        <div class="dropdown-header"></div>
+                        <div class="price-range">
+                            <input type="range" id="min-price" min="0" max="500" step="1" value="0" oninput="updatePrice()">
+                            <input type="range" id="max-price" min="0" max="500" step="1" value="500" oninput="updatePrice()">
+                            <span id="price-label">0€ - 500€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trier Par Dropdown -->
+                <div class="dropdown trier">
+                    <button class="dropdown-button" onclick="toggleDropdown('trier')">Trier par <span class="arrow"></span></button>
+                    <div class="dropdown-menu trier-menu">
+                        <div class="dropdown-header"></div>
+                        <div class="trier-list">
+                            <label class="trier-option" onclick="selectOption('trier', 'Pertinence')">
+                                <span>Pertinence</span>
+                                <input type="radio" name="sort-option" value="pertinence" checked>
+                                <span class="radio-custom"></span>
+                            </label>
+                            <label class="trier-option" onclick="selectOption('trier', 'Prix décroissant')">
+                                <span>Prix décroissant</span>
+                                <input type="radio" name="sort-option" value="prix-decroissant">
+                                <span class="radio-custom"></span>
+                            </label>
+                            <label class="trier-option" onclick="selectOption('trier', 'Prix croissant')">
+                                <span>Prix croissant</span>
+                                <input type="radio" name="sort-option" value="prix-croissant">
+                                <span class="radio-custom"></span>
+                            </label>
+                            <label class="trier-option" onclick="selectOption('trier', 'Le plus récent')">
+                                <span>Le plus récent</span>
+                                <input type="radio" name="sort-option" value="recent">
+                                <span class="radio-custom"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END drop down -->
+        <!-- Display selected filter tags -->
+        <div id="filter-tags"></div>
+
+        <div class="row" id="product-list">
             {% for product in products %}
             <div class="col-md-4 mb-3">
                 <div class="card">
