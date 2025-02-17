@@ -1,128 +1,469 @@
 {% load static %}
-<nav id="navbar">
+<nav id="navbar" class="">
     <div class="upper-nav-wrapper">
-        <div class="logo-et-search">
-            <div class="le-logo">
-                <a href="/"><img src="{% static 'images/logo.png' %}" alt="Logo, Return to home" class="nav-logo"></a>
-            </div>
-            <div class="search-trigger">
-                <input type="text" class="search-container" placeholder="Rechercher...">
-                <i class="fas fa-search ml-moins30"></i>
-            </div>
+      <div class="logo-et-search">
+        <div class="le-logo">
+            <a href="/"><img src="{% static 'images/logo.png' %}" alt="Logo, Return to home" class="nav-logo"></a>
         </div>
-        <div class="upper-nav-content top-menu-right-part">
-            <div class="menu-upper-menu-container">
-                <ul id="menu-upper-menu">
-                    <li class="main-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                        <div class="sub-menu-trigger"></div>
-                        <span class="nav-link me-connecter-container">
-                            <i class="material-icons">account_circle</i>
-                            {% if user.is_authenticated %}
-                                <span class="me-connecter-text">Bonjour, {{ user.username }}</span>
-                            {% else %}
-                                <span class="me-connecter-text">ME CONNECTER</span>
-                            {% endif %}
-                        </span>
-                        <ul class="submenu">
-                            {% if user.is_authenticated %}
-                                <li><a href="#">Je vends mes articles</a></li>
-                                <li><a href="#">Mes favoris</a></li>
-                                <li><a href="#">Cagnotte</a></li>
-                                <li><a href="#">Historique des commandes</a></li>
-                                <li><a href="#">Mon profil</a></li>
-                                <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
-                            {% else %}
-                                <li><a href="{% url 'login' %}">Se connecter</a></li>
-                                <li><a href="{% url 'register' %}">Créer un compte</a></li>
-                            {% endif %}
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+        <div class="search-trigger">
+          <input type="text" class="search-container" placeholder="Rechercher...">
+          <i class="fas fa-search ml-moins30"></i>
         </div>
-        <div class="mobile-trigger">
-            <div></div>
-            <div></div>
-            <div></div>
+      </div>
+      <div class="upper-nav-content top-menu-right-part">
+        <div class="menu-upper-menu-container">
+          <ul id="menu-upper-menu" class="">
+            <li class="main-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+              <div class="sub-menu-trigger"></div>
+              <span class="nav-link me-connecter-container">
+                <i class="material-icons">account_circle</i>
+                {% if user.is_authenticated %}
+                <span class="me-connecter-text">Bonjour, {{ user.username }}</span>
+            {% else %}
+                <span class="me-connecter-text">ME CONNECTER</span>
+            {% endif %}              
+        </span>
+              <ul class="submenu">
+                {% if user.is_authenticated %}
+                <li><a href="#">Je vends mes articles</a></li>
+                <li><a href="#">Mes favoris</a></li>
+                <li><a href="#">Cagnotte</a></li>
+                <li><a href="#">Historique des commandes</a></li>
+                <li><a href="{% url 'profile' %}">Mon profil</a></li>
+                <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Se connecter</a></li>
+                <li><a href="{% url 'register' %}">Créer un compte</a></li>
+            {% endif %}              
+        </ul>
+            </li>
+          </ul>
         </div>
+      </div>
+      <div class="mobile-trigger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
     <div class="lower-nav-wrapper">
-        <div class="mobile-cta">
-            <div class="close-trigger mobile-close-trigger"></div>
-        </div>
-        <div class="menu-main-menu-container">
-            <ul id="menu-main-menu" class="main-nav">
-                <li class="main-dropdown menu-item">
-                    <a href="#">FILLE</a>
-                    <ul class="submenu">
-                        <li><a href="#">Haut</a>
-                            <ul class="submenu-right">
-                                <li><a href="#">Chemises / t-shirts</a></li>
-                                <li><a href="#">Pulls / vestes</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Bas</a>
-                            <ul class="submenu-right">
-                                <li><a href="#">Pantalons</a></li>
-                                <li><a href="#">Jupes</a></li>
-                                <li><a href="#">Shorts</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Sous-vêtements</a></li>
-                        <li><a href="#">Body</a></li>
-                        <li><a href="#">Robes</a></li>
-                        <li><a href="#">Chaussures / Chaussons</a></li>
-                    </ul>
-                </li>
-                <li class="main-dropdown menu-item">
-                    <a href="#">GARÇON</a>
-                    <ul class="submenu">
-                        <li><a href="#">Haut</a>
-                            <ul class="submenu-right">
-                                <li><a href="#">Chemises / t-shirts</a></li>
-                                <li><a href="#">Pulls / vestes</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Bas</a>
-                            <ul class="submenu-right">
-                                <li><a href="#">Pantalons</a></li>
-                                <li><a href="#">Shorts</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Sous-vêtements</a></li>
-                        <li><a href="#">Body</a></li>
-                        <li><a href="#">Chaussures / Chaussons</a></li>
-                    </ul>
-                </li>
-                <li class="main-dropdown menu-item">
-                    <a href="#">MAISON</a>
-                    <ul class="submenu">
-                        <li><a href="#">Repas</a></li>
-                        <li><a href="#">Bain</a></li>
-                        <li><a href="#">Se reposer</a></li>
-                        <li><a href="#">Déco</a></li>
-                    </ul>
-                </li>
-                <li class="main-dropdown menu-item">
-                    <a href="#">SE DÉPLACER</a>
-                    <ul class="submenu">
-                        <li><a href="#">Pousettes</a></li>
-                        <li><a href="#">Sièges auto</a></li>
-                        <li><a href="#">Portes bébé</a></li>
-                    </ul>
-                </li>
-                <li class="main-dropdown menu-item">
-                    <a href="#">JEUX / LIVRES</a>
-                    <ul class="submenu">
-                        <li><a href="#">Jeux</a></li>
-                        <li><a href="#">Livres</a></li>
-                        <li><a href="#">Déguisements</a></li>
-                    </ul>
-                </li>
-                <li class="main-dropdown menu-item" style="background-color:#F7941D; color: rgb(240, 251, 255);">
-                    <a class="container-doudou" href="#">RECHERCHE DOUDOU</a>
-                </li>
+      <div class="mobile-cta">
+        <div class="close-trigger mobile-close-trigger"></div>
+      </div>
+      <div class="menu-main-menu-container">
+        <ul id="menu-main-menu" class="main-nav">
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page">
+            <a class="" href="https://">FILLE </a>
+            <ul class="submenu">
+              <li>
+                <a href="#">Haut</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Chemises / t-shirts</a>
+                  </li>
+                  <li>
+                    <a href="https://">Pulls / vestes</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Bas</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Pantalons</a>
+                  </li>
+                  <li>
+                    <a href="https://">Jupes</a>
+                  </li>
+                  <li>
+                    <a href="https://">Shorts</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Sous-vêtements</a>
+              </li>
+              <li>
+                <a href="#">Body</a>
+              </li>
+              <li>
+                <a href="https://">Robes</a>
+              </li>
+              <li>
+                <a href="#">Chaussures / Chaussons</a>
+              </li>
+              <li>
+                <a href="https://">Vêtements d'extérieur</a>
+              </li>
+              <li>
+                <a href="https://">Vêtements nuit</a>
+              </li>
+              <li>
+                <a href="https://">Autres...</a>
+              </li>
             </ul>
+          </li>
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page">
+            <a class="" href="https://">GARÇON</a>
+            <ul class="submenu">
+              <li>
+                <a href="#">Haut</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Chemises / t-shirts</a>
+                  </li>
+                  <li>
+                    <a href="https://">Pulls / vestes</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Bas</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Pantalons</a>
+                  </li>
+                  <li>
+                    <a href="https://">Shorts</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Sous-vêtements</a>
+              </li>
+              <li>
+                <a href="#">Body</a>
+              </li>
+              <li>
+                <a href="#">Chaussures / Chaussons</a>
+              </li>
+              <li>
+                <a href="https://">Vêtements d'extérieur</a>
+              </li>
+              <li>
+                <a href="https://">Vêtements nuit</a>
+              </li>
+              <li>
+                <a href="https://">Autres...</a>
+              </li>
+            </ul>
+          </li>
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+            <div class="sub-menu-trigger"></div>
+            <a class="" href="https://">FEMME ENCEINTE</a>
+            <ul class="submenu">
+              <li>
+                <a href="#">Haut</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Chemises / t-shirts</a>
+                  </li>
+                  <li>
+                    <a href="https://">Pulls / vestes</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Bas</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Pantalons</a>
+                  </li>
+                  <li>
+                    <a href="https://">Jupes</a>
+                  </li>
+                  <li>
+                    <a href="https://">Shorts</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Sous-vêtements</a>
+              </li>
+              <li>
+                <a href="https://">Robes</a>
+              </li>
+              <li>
+                <a href="#">Chaussures / Chaussons</a>
+              </li>
+              <li>
+                <a href="https://">Vêtements d'extérieur</a>
+              </li>
+              <li>
+                <a href="https://">Vêtements nuit</a>
+              </li>
+              <li><a href="https://">coussins d'allaitements</a>
+              </li>
+              <li>
+                <a href="https://">Autres...</a>
+              </li>
+            </ul>
+          </li>
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+            <div class="sub-menu-trigger"></div>
+            <a class="" href="https:/">MAISON</a>
+            <ul class="submenu">
+              <li>
+                <a href="https://">Repas</a>
+                <ul class="submenu-right">
+                  <li><a href="https://">Nécessaire pour manger</a>
+                  </li>
+                  <li><a href="https://">Biberons</a>
+                  </li>
+                  <li><a href="https://">Chaise hautes / réhausseurs</a>
+                  </li>
+                  <li><a href="https://">Tour Montessori</a>
+                  </li>
+                  <li><a href="https://">Tout pour cuisiner</a>
+                  </li>
+                  <li><a href="https://">Gourdes / lunch box</a>
+                  </li>
+                  <li><a href="https://">Autres...</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://">Bain</a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Baignoires</a>
+                  </li>
+                  <li>
+                    <a href="https://">Serviettes </a>
+                  </li>
+                  <li>
+                    <a href="https://">Jeux de bain</a>
+                  </li>
+                  <li>
+                    <a href="https://">produits d'hygiène </a>
+                  </li>
+                  <li>
+                    <a href="https://">Soin bébé</a>
+                  </li>
+                  <li>
+                    <a href="https://">couches</a>
+                  </li>
+                  <li>
+                    <a href="https://">Autres...</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://">Se reposer </a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Lits / Berceaux</a>
+                  </li>
+                  <li><a href="https://">Matelas</a>
+                  </li>
+                  <li><a href="https://">Draps</a>
+                  </li>
+                  <li><a href="https://">Housses de couette</a>
+                  </li>
+                  <li><a href="https://">Orelliers</a>
+                  </li>
+                  <li><a href="https://">Tours de lits</a>
+                  </li>
+                  <li><a href="https://">doudous</a>
+                  </li>
+                  <li><a href="https://">veilleuses</a>
+                  </li>
+                  <li><a href="https://">Gigoteuses</a>
+                  </li>
+                  <li><a href="https://">Mobiles à accrocher</a>
+                  </li>
+                  <li><a href="https://">Autres...</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="https://">Déco </a>
+                <ul class="submenu-right">
+                  <li>
+                    <a href="https://">Lampes</a>
+                  </li>
+                  <li><a href="https://">Cadres</a>
+                  </li>
+                  <li><a href="https://">Stickers / posters</a>
+                  </li>
+                  <li><a href="https://">Boites / panniers</a>
+                  </li>
+                  <li><a href="https://">Riedeaux</a>
+                  </li>
+                  <li><a href="https://">Chaises / tables</a>
+                  </li>
+                  <li><a href="https://">Autres...</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+            <div class="sub-menu-trigger"></div>
+            <a class="" href="https://">SE DEPLACER</a>
+            <ul class="submenu">
+              <li><a href="https://">Pousettes</a>
+              </li>
+              <li><a href="https://">Portes bébé</a>
+              </li>
+              <li><a href="https://">siège auto</a>
+              </li>
+              <li><a href="https://">parcs</a>
+              </li>
+              <li><a href="https://">Autres ...</a>
+              </li>
+            </ul>
+
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+            <div class="sub-menu-trigger"></div>
+            <a class="" href="https://">JEUX / LIVRES</a>
+            <ul class="submenu">
+              <li><a href="https://">Jeux</a>
+                <ul class="submenu-right">
+                  <li><a href="https://">... bébé</a>
+                  </li>
+                  <li><a href="https://">... de société</a>
+                  </li>
+                  <li><a href="https://">... électronique</a>
+                  </li>
+                  <li><a href="https://">... en bois</a>
+                  </li>
+                  <li><a href="https://">... montessori</a>
+                  </li>
+                  <li><a href="https://">... vidéo</a>
+                  </li>
+                  <li><a href="https://">... musicaux</a>
+                  </li>
+                  <li><a href="https://">... éducatifs</a>
+                  </li>
+                  <li><a href="https://">... d'eau</a>
+                  </li>
+                  <li><a href="https://">Figurines</a>
+                  </li>
+                  <li><a href="https://">Poupées</a>
+                  </li>
+                  <li><a href="https://">Cuisine / dinette</a>
+                  </li>
+                  <li><a href="https://">Peintures</a>
+                  </li>
+                  <li><a href="https://">Autres...</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="https://">Livres</a>
+                <ul class="submenu-right">
+                  <li>
+                  <li><a href="https://">... bébés</a>
+                  </li>
+                  <li><a href="https://">... enfants</a>
+                  </li>
+                  <li><a href="https://">... ado</a>
+                  </li>
+                  <li><a href="https://">Manga</a>
+                  </li>
+                  <li><a href="https://">Bandes dessinées</a>
+                  </li>
+                  <li><a href="https://">Roman</a>
+                  </li>
+                  <li><a href="https://">Coloriage</a>
+                  </li>
+                  <li><a href="https://">... gomettes</a>
+                  </li>
+                  <li><a href="https://">... d'activités</a>
+                  </li>
+                  <li><a href="https://">... de jeux</a>
+                  </li>
+                  <li><a href="https://">... langue étrangère</a>
+                  </li>
+                  <li><a href="https://">Autres...</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="" href="https://">Vélo</a>
+                <ul class="submenu-right">
+                  <li><a href="https://">Trotinettes</a>
+                  </li>
+                  <li><a href="https://">Vélos</a>
+                  </li>
+                  <li><a href="https://">Tricycles</a>
+                  </li>
+                  <li><a href="https://">draiennes</a>
+                  </li>
+                  <li><a href="https://">Autres ...</a>
+                </ul>
+              </li>
+              <li><a href="https://">Déguisements</a></li>
+            </ul>
+          </li>
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+            <div class="sub-menu-trigger"></div>
+            <a class="" href="https://">SCOLAIRE</a>
+            <ul class="submenu">
+              <li><a href="https://">Livres scolaires</a>
+              </li>
+              <li><a href="https://">Cartables / sac à dos</a>
+              </li>
+              <li><a href="https://">Trousses</a>
+              </li>
+              <li><a href="https://">Tablier / blouses</a>
+              </li>
+              <li><a href="https://">Autres...</a>
+            </ul>
+          </li>
+
+          <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"
+            style="background-color:#F7941D; color: rgb(240, 251, 255);">
+            <div class="sub-menu-trigger"></div>
+            <a class="container-doudou" href="https://">RECHERCHE DOUDOU</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="mobile-secondary-nav">
+        <div class="menu-upper-menu-container">
+          <ul id="menu-upper-menu-1" class="">
+            <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page">
+              <a class="" href="https://">C</a>
+            </li>
+            <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page">
+              <a class="" href="https://">C</a>
+            </li>
+            <li class="main-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+              <div class="sub-menu-trigger"></div>
+              <span class="nav-link">connect</span>
+              <ul class="submenu">
+                <li>
+                  <a href="https://">a</a>
+                </li>
+                <li>
+                  <a href="https://">b</a>
+                </li>
+                <li>
+                  <a href="https://">c</a>
+                </li>
+                <li><a href="https://">d</a></li>
+              </ul>
+            </li>
+            <li class="main-dropdown menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children">
+              <div class="sub-menu-trigger"></div>
+              <a class="" href="https://">G</a>
+              <ul class="submenu">
+                <li>
+                  <a href="https://">D</a>
+                </li>
+                <li>
+                  <a href="https:///">B</a>
+                </li>
+                <li>
+                  <a href="https:///">T</a>
+                </li>
+                <li>
+                  <a href="https://">V</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
+      </div>
     </div>
-</nav>
+  </nav>
