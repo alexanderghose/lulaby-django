@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Produits - Lulaby{% endblock %}
+
+{% block content %}
+<h1>Produits disponibles</h1>
+<div class="row">
+    {% for product in object_list %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ product.title }}</h5>
+                <p class="card-text">€{{ product.price }}</p>
+                <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Voir</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}  <!-- ✅ Add this line at the top -->
+
+{% block title %}Lulaby - Home{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="wp-block-wab-banner-slider-item wa-banner">
+        <div class="wa-banner-content color-white">
+            <div class="wa-banner-content-text">
+                <h1>Tout pour vos enfants de 0 à 18 ans</h1>
+                <p>Achetez, Vendez de la seconde main et restez à la mode à prix mini</p>
+                <div class="btn-container">
+                    <a href="#" class="btn-cta btn-white">Envie de papoter avec d'autres parents?</a>
+                </div>
+            </div>
+        </div>
+        <div class="wa-banner-image" style="background-image:url('{% static 'images/e.png' %}')"></div>
+    </div>
+</section>
+
+<section class="section produits">
+    <div class="container-infos-produits">
+        <div class="container-title">
+            <h2 class="">Chaussures filles</h2>
+        </div>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.title }}</h5>
+                        <p class="card-text">€{{ product.price }}</p>
+                        <a href="{% url 'product_detail' product.id %}" class="btn btn-primary">Voir</a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p>Aucun produit trouvé.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
