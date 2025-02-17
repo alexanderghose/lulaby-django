@@ -1,24 +1,127 @@
 {% load static %}
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="{% static 'images/logo.png' %}" alt="Lulaby Logo" class="nav-logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                {% if user.is_authenticated %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sell</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}?next=/">Logout</a></li>
-                {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
-                {% endif %}
+<nav id="navbar">
+    <div class="upper-nav-wrapper">
+        <div class="logo-et-search">
+            <div class="le-logo">
+                <a href="/"><img src="{% static 'images/logo.png' %}" alt="Logo, Return to home" class="nav-logo"></a>
+            </div>
+            <div class="search-trigger">
+                <input type="text" class="search-container" placeholder="Rechercher...">
+                <i class="fas fa-search ml-moins30"></i>
+            </div>
+        </div>
+        <div class="upper-nav-content top-menu-right-part">
+            <div class="menu-upper-menu-container">
+                <ul id="menu-upper-menu">
+                    <li class="main-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
+                        <div class="sub-menu-trigger"></div>
+                        <span class="nav-link me-connecter-container">
+                            <i class="material-icons">account_circle</i>
+                            {% if user.is_authenticated %}
+                                <span class="me-connecter-text">Bonjour, {{ user.username }}</span>
+                            {% else %}
+                                <span class="me-connecter-text">ME CONNECTER</span>
+                            {% endif %}
+                        </span>
+                        <ul class="submenu">
+                            {% if user.is_authenticated %}
+                                <li><a href="#">Je vends mes articles</a></li>
+                                <li><a href="#">Mes favoris</a></li>
+                                <li><a href="#">Cagnotte</a></li>
+                                <li><a href="#">Historique des commandes</a></li>
+                                <li><a href="#">Mon profil</a></li>
+                                <li><a href="{% url 'logout' %}">Se déconnecter</a></li>
+                            {% else %}
+                                <li><a href="{% url 'login' %}">Se connecter</a></li>
+                                <li><a href="{% url 'register' %}">Créer un compte</a></li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mobile-trigger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="lower-nav-wrapper">
+        <div class="mobile-cta">
+            <div class="close-trigger mobile-close-trigger"></div>
+        </div>
+        <div class="menu-main-menu-container">
+            <ul id="menu-main-menu" class="main-nav">
+                <li class="main-dropdown menu-item">
+                    <a href="#">FILLE</a>
+                    <ul class="submenu">
+                        <li><a href="#">Haut</a>
+                            <ul class="submenu-right">
+                                <li><a href="#">Chemises / t-shirts</a></li>
+                                <li><a href="#">Pulls / vestes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Bas</a>
+                            <ul class="submenu-right">
+                                <li><a href="#">Pantalons</a></li>
+                                <li><a href="#">Jupes</a></li>
+                                <li><a href="#">Shorts</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sous-vêtements</a></li>
+                        <li><a href="#">Body</a></li>
+                        <li><a href="#">Robes</a></li>
+                        <li><a href="#">Chaussures / Chaussons</a></li>
+                    </ul>
+                </li>
+                <li class="main-dropdown menu-item">
+                    <a href="#">GARÇON</a>
+                    <ul class="submenu">
+                        <li><a href="#">Haut</a>
+                            <ul class="submenu-right">
+                                <li><a href="#">Chemises / t-shirts</a></li>
+                                <li><a href="#">Pulls / vestes</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Bas</a>
+                            <ul class="submenu-right">
+                                <li><a href="#">Pantalons</a></li>
+                                <li><a href="#">Shorts</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Sous-vêtements</a></li>
+                        <li><a href="#">Body</a></li>
+                        <li><a href="#">Chaussures / Chaussons</a></li>
+                    </ul>
+                </li>
+                <li class="main-dropdown menu-item">
+                    <a href="#">MAISON</a>
+                    <ul class="submenu">
+                        <li><a href="#">Repas</a></li>
+                        <li><a href="#">Bain</a></li>
+                        <li><a href="#">Se reposer</a></li>
+                        <li><a href="#">Déco</a></li>
+                    </ul>
+                </li>
+                <li class="main-dropdown menu-item">
+                    <a href="#">SE DÉPLACER</a>
+                    <ul class="submenu">
+                        <li><a href="#">Pousettes</a></li>
+                        <li><a href="#">Sièges auto</a></li>
+                        <li><a href="#">Portes bébé</a></li>
+                    </ul>
+                </li>
+                <li class="main-dropdown menu-item">
+                    <a href="#">JEUX / LIVRES</a>
+                    <ul class="submenu">
+                        <li><a href="#">Jeux</a></li>
+                        <li><a href="#">Livres</a></li>
+                        <li><a href="#">Déguisements</a></li>
+                    </ul>
+                </li>
+                <li class="main-dropdown menu-item" style="background-color:#F7941D; color: rgb(240, 251, 255);">
+                    <a class="container-doudou" href="#">RECHERCHE DOUDOU</a>
+                </li>
             </ul>
         </div>
     </div>
