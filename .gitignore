@@ -1,0 +1,72 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django specific
+*.log
+staticfiles/
+media/
+db.sqlite3
+.env
+
+# If using Docker
+docker-compose.override.yml
+docker-compose.override.*.yml
+.dockerignore
+.DS_Store
+
+# If using Docker volumes
+docker-volumes/
+
+# If using pipenv or virtualenv
+Pipfile
+Pipfile.lock
+venv/
+
+# If using poetry
+poetry.lock
+
+# If using mypy
+.mypy_cache/
+
+# If using pytest
+.pytest_cache/
+
+# VS Code settings
+.vscode/
+
+# JetBrains IDE settings
+.idea/
+
+# Celery
+celerybeat-schedule
+
+# Database
+*.sqlite3
+*.db
+*.sqlite
+
+# PyCharm
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# If using Git LFS
+tmp/
+
+# If using node.js with Django
+node_modules/
+yarn.lock
+package-lock.json
+
+# If using Redis
+redis-data/
+
+# If using Postgres with Docker
+pgdata/
+
+# Ignore migrations if regenerating
+django_project/*/migrations/*
+!django_project/*/migrations/__init__.py
