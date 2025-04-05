@@ -1,17 +1,20 @@
 ## prereqs: 
 1. make sure docker is running
-2. make sure you have an internet connection
+1. make sure you have an internet connection
 
 ## useful commands:
 
 1. run the backend: 
 docker-compose up --build
 
-2. restart everything (server, db, etc.)
+1. run other commands inside the container:
+docker-compose exec web python manage.py makemigrations
+
+1. restart everything (server, db, etc.)
 docker-compose down;docker-compose up --build
 
-3. restart the server:
+1. restart the server:
 docker-compose restart web
 
-4. hit server with browser
+1. hit server with browser
 localhost:8000/

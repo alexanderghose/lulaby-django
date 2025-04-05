@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 django = "*"
 psycopg2 = "*"
-dj-database-url = "*"
 pillow = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
