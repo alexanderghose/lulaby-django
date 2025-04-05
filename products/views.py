@@ -39,7 +39,7 @@ def index(request, category_id=None):
         "brands": brands,
         "conditions": conditions,
         "colors": colors,
-        "category_tree": category_tree,
+        #"category_tree": category_tree,
         "current_category": category,  # optional: to highlight selected
     })
 
