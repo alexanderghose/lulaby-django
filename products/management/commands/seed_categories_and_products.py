@@ -121,7 +121,7 @@ class Command(BaseCommand):
                 brand="BrilliantKids",
                 condition="Like New",
                 category=parent,
-                image="products/sample.jpg",
+                image="",
             )
             product.save()
             count += 1
