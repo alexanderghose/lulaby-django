@@ -1,5 +1,7 @@
-# if you want to delete all before seeding: docker-compose exec web python manage.py shell -c "from products.models import Product, Category; Product.objects.all().delete(); Category.objects.all().delete()"
-# how to run: docker-compose exec web python manage.py seed_categories_and_products
+# 0. if you want to delete all before seeding: 
+# docker-compose exec web python manage.py shell -c "from products.models import Product, Category; Product.objects.all().delete(); Category.objects.all().delete()"
+# 1. how to run: 
+# docker-compose exec web python manage.py seed_categories_and_products
 
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
@@ -103,7 +105,49 @@ class Command(BaseCommand):
     ['SE DEPLACER', 'Portes bébé'],
     ['SE DEPLACER', 'siège auto'],
     ['SE DEPLACER', 'parcs'],
-    ['SE DEPLACER', 'Autres ...']
+    ['SE DEPLACER', 'Autres ...'],
+    ['JEUX / LIVRES'],
+    ['JEUX / LIVRES', 'Jeux'],
+    ['JEUX / LIVRES', 'Jeux', '... bébé'],
+    ['JEUX / LIVRES', 'Jeux', '... de société'],
+    ['JEUX / LIVRES', 'Jeux', '... électronique'],
+    ['JEUX / LIVRES', 'Jeux', '... en bois'],
+    ['JEUX / LIVRES', 'Jeux', '... montessori'],
+    ['JEUX / LIVRES', 'Jeux', '... vidéo'],
+    ['JEUX / LIVRES', 'Jeux', '... musicaux'],
+    ['JEUX / LIVRES', 'Jeux', '... éducatifs'],
+    ['JEUX / LIVRES', 'Jeux', "... d'eau"],
+    ['JEUX / LIVRES', 'Jeux', 'Figurines'],
+    ['JEUX / LIVRES', 'Jeux', 'Poupées'],
+    ['JEUX / LIVRES', 'Jeux', 'Cuisine / dinette'],
+    ['JEUX / LIVRES', 'Jeux', 'Peintures'],
+    ['JEUX / LIVRES', 'Jeux', 'Autres...'],
+    ['JEUX / LIVRES', 'Livres'],
+    ['JEUX / LIVRES', 'Livres', '... bébés'],
+    ['JEUX / LIVRES', 'Livres', '... enfants'],
+    ['JEUX / LIVRES', 'Livres', '... ado'],
+    ['JEUX / LIVRES', 'Livres', 'Manga'],
+    ['JEUX / LIVRES', 'Livres', 'Bandes dessinées'],
+    ['JEUX / LIVRES', 'Livres', 'Roman'],
+    ['JEUX / LIVRES', 'Livres', 'Coloriage'],
+    ['JEUX / LIVRES', 'Livres', '... gomettes'],
+    ['JEUX / LIVRES', 'Livres', "... d'activités"],
+    ['JEUX / LIVRES', 'Livres', '... de jeux'],
+    ['JEUX / LIVRES', 'Livres', '... langue étrangère'],
+    ['JEUX / LIVRES', 'Livres', 'Autres...'],
+    ['JEUX / LIVRES', 'Vélo'],
+    ['JEUX / LIVRES', 'Vélo', 'Trotinettes'],
+    ['JEUX / LIVRES', 'Vélo', 'Vélos'],
+    ['JEUX / LIVRES', 'Vélo', 'Tricycles'],
+    ['JEUX / LIVRES', 'Vélo', 'draiennes'],
+    ['JEUX / LIVRES', 'Vélo', 'Autres ...'],
+    ['JEUX / LIVRES', 'Déguisements'],
+    ['SCOLAIRE'],
+    ['SCOLAIRE', 'Livres scolaires'],
+    ['SCOLAIRE', 'Cartables / sac à dos'],
+    ['SCOLAIRE', 'Trousses'],
+    ['SCOLAIRE', 'Tablier / blouses'],
+    ['SCOLAIRE', 'Autres...'],
 ]
 
         count = 0

@@ -18,3 +18,6 @@ docker-compose restart web
 
 1. hit server with browser
 localhost:8000/
+
+1. seed the database
+docker-compose exec web python manage.py seed_categories_and_products
