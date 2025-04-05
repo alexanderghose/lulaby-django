@@ -1,16 +1,35 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from .models import Product
+from .models import Product, Category
 from django.http import JsonResponse
 
+def build_category_tree():
+    def build_node(category):
+        return {
+            "id": category.id,
+            "name": category.name,
+            "children": [build_node(child) for child in category.children.all()]
+        }
 
-def index(request):
-    products = Product.objects.all()
+    top_level = Category.objects.filter(parent=None).prefetch_related("children")
+    return [build_node(cat) for cat in top_level]
+
+
+def index(request, category_id=None):
+    if category_id:
+        category = get_object_or_404(Category, id=category_id)
+        descendant_ids = [cat.id for cat in category.get_descendants(include_self=True)]
+        products = Product.objects.filter(category__in=descendant_ids)
+    else:
+        category = None
+        products = Product.objects.all()
 
     sizes = Product.objects.values_list("size", flat=True).distinct()
     brands = Product.objects.values_list("brand", flat=True).distinct()
     conditions = Product.objects.values_list("condition", flat=True).distinct()
     colors = Product.objects.values_list("color", flat=True).distinct()
+
+    category_tree = build_category_tree()
 
     return render(request, "index.html", {
         "products": products,
@@ -18,6 +37,8 @@ def index(request):
         "brands": brands,
         "conditions": conditions,
         "colors": colors,
+        "category_tree": category_tree,
+        "current_category": category,  # optional: to highlight selected
     })
 
 def filter_products(request):
