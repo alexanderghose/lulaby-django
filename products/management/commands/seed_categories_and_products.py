@@ -1,3 +1,6 @@
+# if you want to delete all before seeding: docker-compose exec web python manage.py shell -c "from products.models import Product, Category; Product.objects.all().delete(); Category.objects.all().delete()"
+# how to run: docker-compose exec web python manage.py seed_categories_and_products
+
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
 from products.models import Category, Product
@@ -113,16 +116,17 @@ class Command(BaseCommand):
 
             product = Product(
                 seller=user,
-                title="DEBUG product #{} for {}".format(count + 1, " > ".join(path)),
-                description="A unique product under {}".format(" > ".join(path)),
+                title=f"Sample product for {' > '.join(path)}",
+                description=f"A lovely example product under {' > '.join(path)}.",
                 price=9.99,
                 size="M",
                 color="Rainbow",
                 brand="BrilliantKids",
                 condition="Like New",
                 category=parent,
-                image="",
             )
+
+            product.set_image_from_url("https://upload.wikimedia.org/wikipedia/commons/a/a9/Example.jpg")
             product.save()
             count += 1
             self.stdout.write(self.style.SUCCESS("✅ Created product #{} in: {}".format(count, parent)))
