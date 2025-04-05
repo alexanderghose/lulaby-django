@@ -7,6 +7,10 @@ __pycache__/
 *.log
 staticfiles/
 media/
+# Ignore uploaded images and media
+/media/
+/media/*
+!/media/.gitkeep
 db.sqlite3
 .env
 
