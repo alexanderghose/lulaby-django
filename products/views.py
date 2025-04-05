@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Product, Category
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+
 
 def build_category_tree():
     def build_node(category):

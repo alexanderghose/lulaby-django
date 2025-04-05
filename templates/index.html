@@ -27,7 +27,13 @@
 
     <div class="container-infos-produits">
         <div class="container-title">
-            <h2 class="">Chaussures filles</h2>
+            <h2 class="">
+                {% if current_category %}
+                    {{ current_category.get_breadcrumb }}
+                {% else %}
+                    Tous les produits
+                {% endif %}
+            </h2>
         </div>
 
         <!-- START drop down filters -->

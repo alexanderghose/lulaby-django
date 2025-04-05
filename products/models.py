@@ -44,7 +44,7 @@ class Category(models.Model):
         while node:
             breadcrumb.append(node)
             node = node.parent
-        return reversed(breadcrumb)
+        return " > ".join(cat.name for cat in reversed(breadcrumb))
 
 class Product(models.Model):
     seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
